@@ -6,7 +6,7 @@ import Register from '../pages/Register'
 function Login(props) {
     return (
         <div>
-            <div className="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div className="mask d-flex align-items-center h-100 gradient-custom-3 bg=info">
                 <div className="container h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col-12 col-md-9 col-lg-7 col-xl-6">
@@ -61,18 +61,18 @@ function Login(props) {
                                                 Login
                                             </button>
                                         </div>
-                                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                                                <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-                                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                                    <i class="fab fa-facebook-f"></i>
+                                        <div className="d-flex justify-content-center">
+                                                <p className="lead fw-normal mb-0 me-3 mt-4">Sign in with</p>
+                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
+                                                    <i className="fab fa-facebook-f"></i>
                                                 </button>
 
-                                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                                    <i class="fab fa-twitter"></i>
+                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
+                                                    <i className="fab fa-twitter"></i>
                                                 </button>
 
-                                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                                    <i class="fab fa-linkedin-in"></i>
+                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
+                                                    <i className="fab fa-linkedin-in"></i>
                                                 </button>
                                             </div>
                                         <p className="text-center text-muted mt-5 mb-0">
