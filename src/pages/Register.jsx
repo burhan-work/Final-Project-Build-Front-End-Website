@@ -1,10 +1,28 @@
-import React from 'react';
-import { Link, } from 'react-router-dom'
+import React, { Component} from 'react';
+import { Link, } from 'react-router-dom';
 
 
-function Register(props) {
+class Register extends Component {
+    state = {
+        username: '',
+        email: '',
+        password: ''
+    }
+
+    handleOnChange = (event) => {
+        const { value, name } = event.target
+        this.setState({ [name]: value })
+    }
+    handleFormOnSubmit = (event) => {
+        event.preventDefault()
+        const {email, password} = this.state
+        localStorage.setItem('form', JSON.stringify(this.state))
+        console.log({email, password})
+    }
+    render () {
     return (
         <div>
+            <form onSubmit={this.handleFormOnSubmit}>
             <section className="vh-100 bg-success">
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
@@ -15,17 +33,26 @@ function Register(props) {
                                     <h3 className="mb-5">SIGN UP</h3>
 
                                     <div className="form-outline mb-4">
-                                        <input type="username" id="typeUserNameX-2" className="form-control form-control-lg" />
+                                        <input type="username" id="typeUserNameX-2" name='username' className="form-control form-control-lg" required='Input Name' placeholder='Username'
+                                        value={this.state.username}
+                                        onChange={this.handleOnChange}
+                                        />
                                         <label className="form-label" for="typeUserNameX-2">UserName</label>
                                     </div>
 
                                     <div className="form-outline mb-4">
-                                        <input type="email" id="typeEmailX-2" className="form-control form-control-lg" />
+                                        <input type="email" id="typeEmailX-2" name='email' className="form-control form-control-lg" required='Input Name' placeholder='example@gmail.com'
+                                        value={this.state.email}
+                                        onChange={this.handleOnChange}
+                                        />
                                         <label className="form-label" for="typeEmailX-2">Email</label>
                                     </div>
 
                                     <div className="form-outline mb-4">
-                                        <input type="password" id="typePasswordX-2" className="form-control form-control-lg" />
+                                        <input type="password" id="typePasswordX-2" name='password' className="form-control form-control-lg" required='Input Name' placeholder='Password'
+                                        value={this.state.password}
+                                        onChange={this.handleOnChange}
+                                        />
                                         <label className="form-label" for="typePasswordX-2">Password</label>
                                     </div>
 
@@ -42,8 +69,10 @@ function Register(props) {
                     </div>
                 </div>
             </section>
+            </form>
         </div>
     );
+    }
 }
 
 export default Register;
