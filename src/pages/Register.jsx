@@ -39,7 +39,7 @@ export const Register = () => {
         if(email!==''){
             const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             if(emailRegex.test(email)){
-                toast.success('You Have Successfully Registered', {
+                toast.success('You Have Successfully Registered!', {
                     position: "top-center",
                     autoClose: 5000,
                     hideProgressBar: false,
