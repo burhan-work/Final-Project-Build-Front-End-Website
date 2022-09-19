@@ -5,12 +5,15 @@ import Product from "./pages/Product";
 import Navbar from "./components/Navbar";
 // import Login from './pages/Login';\
 // import Login from './pages/Login';
-import Login from './pages/Login';
-import Cart from './pages/Cart';
-import Contact from './pages/Contact';
+import Login from "./pages/Login";
+import Cart from "./pages/Cart";
+import Contact from "./pages/Contact";
 import Register from "./pages/Register";
+
+
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from "react-toastify";
+
 
 function App() {
   return (
@@ -31,18 +34,19 @@ function App() {
       {/* <Login />  */}
 
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/product' element={<Product />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/Login' element={<Login />} />
-        <Route path='/Register' element={<Register />} />
+
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
+
+        
       </Routes>
       <ToastContainer />
     </>
-    
-
   );
 }
 
