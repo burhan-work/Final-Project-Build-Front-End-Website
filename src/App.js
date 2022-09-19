@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
-
+import Navbar from "./components/Navbar";
 // import Login from './pages/Login';\
 // import Login from './pages/Login';
 import Login from './pages/Login';
