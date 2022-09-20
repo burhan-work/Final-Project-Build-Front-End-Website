@@ -117,7 +117,7 @@ export const Register = () => {
                                             <label className="form-label" for="typePasswordX-2">Password</label>
                                         </div>
 
-                                        <button className="btn btn-primary btn-lg btn-block" type="submit" >SIGN UP</button>
+                                        <button className="btn btn-secondary" type="submit" >SIGN UP</button>
 
                                     </div>
                                 </div>
