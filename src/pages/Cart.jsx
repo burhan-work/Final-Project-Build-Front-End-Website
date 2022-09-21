@@ -15,7 +15,7 @@ const Cart = () => {
   return (
     <Container className="py-4 mt-5">
       <h1 className="my-5 text-center">
-        {isEmpty ? 'Your Cart is Empty' : 'The Cart'}
+        {isEmpty ? 'Your Cart is Still Empty' : 'The Cart'}
       </h1>
       <Row className="justify-content-center">
         <Table responsive="sm" className="mb-5">
