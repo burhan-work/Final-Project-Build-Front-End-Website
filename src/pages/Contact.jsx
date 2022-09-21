@@ -1,23 +1,10 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+
 import '../style/contact.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
 
 
 const Contact = () => {
-    const toastifySuccess = () => {
-  toast('Form sent!', {
-    position: 'bottom-right',
-    autoClose: 5000,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,  
-    draggable: false,
-    className: 'submit-feedback success',
-    toastId: 'notifyToast'
-  });
-};
     const form = useRef()
 
     const sendEmail = (e) => {
