@@ -2,13 +2,13 @@ section#contact{
     width:830px;
     height:650px;
     margin:0 auto;
-    font-family:'Segoe UI',sans-serif
+    font-family:'Segoe UI',sans-serif    
     }
     /* Atur Posisi, Ukuran, Serta Tampilan Pada Form */
     div#contact-form{
     text-align:center;
     border:1px solid rgb(177, 132, 10);
-    width:300px;
+    width: 850px;
     padding:0 50px 15px;
     margin-top:50px;
     margin-bottom: 0ch;
