@@ -17,7 +17,8 @@ section#contact{
     float: center
     }
     /* Atur Heading */
-     h2{
+     h1{
+    text-align:center;
     margin-top:40px
     }
     /* Atur Heading Line */
@@ -36,7 +37,7 @@ section#contact{
     height:35px;
     margin-bottom:25px;
     padding:10px;
-    border:3px solid #2BC1F2
+    border:3px solid #e7ebed
     }
 
     input[type="email"]{
@@ -45,12 +46,12 @@ section#contact{
         height:35px;
         margin-bottom:25px;
         padding:10px;
-        border:3px solid #2BC1F2
+        border:3px solid #e7ebed
         }
     /* Atur Kolom Textarea */
     textarea{
     width:100%;
-    border:3px solid #2BC1F2;
+    border:3px solid #e7ebed;
     padding:10px;
     margin-bottom:25px;
     margin-top:10px;
@@ -61,9 +62,9 @@ section#contact{
     button[type="submit"]{
     width:100%;
     padding:10px 45px;
-    background-color:#2BC1F2;
+    background-color:#151616;
     border:none;
-    color:#fff;
+    color:rgb(241, 237, 237);
     font-size:18px;
     font-weight:700;
     cursor:pointer;
