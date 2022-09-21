@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import "./App.css";
 import Product from "./pages/Product";
 import Login from './pages/Login';
+import  About from "./pages/About";
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
