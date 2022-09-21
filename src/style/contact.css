@@ -4,8 +4,10 @@ section#contact{
     margin:0 auto;
     font-family:'Segoe UI',sans-serif    
     }
+   
     /* Atur Posisi, Ukuran, Serta Tampilan Pada Form */
     div#contact-form{
+    background-color: silver;
     text-align:center;
     border:1px solid rgb(177, 132, 10);
     width: 850px;
