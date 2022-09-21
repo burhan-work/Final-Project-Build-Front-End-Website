@@ -20,7 +20,7 @@ const Home = () => {
                         <p className="card-text lead fs-2" style={{color: "black"}}>
                             CHECK OUT ALL THE TRENDS
                         </p>
-                        <button type="button" class="btn btn-secondary" onClick={handleOnClick}>Check Now</button>
+                        <button type="button" class="btn btn-secondary" onClick={handleOnClick}>Buy Now</button>
                         </div>
                     </div>
             </div>
