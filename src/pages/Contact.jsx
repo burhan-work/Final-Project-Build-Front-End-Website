@@ -23,7 +23,7 @@ const Contact = () => {
         <section id="contact">
             <div className="container">
                 <div id="main">
-                    <h1>Hubungi Kami</h1>
+                    {/* <h1>Hubungi Kami</h1> */}
                     <div id="contact-form">
                         <h2>Contact Us</h2>
                         <form ref={form} onSubmit={sendEmail}>
