@@ -45,7 +45,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="col-md-6 d-flex align-items-stretch"> */}
+            <div className="col-md-6 d-flex align-items-stretch">
                   <div className="info-wrap w-100 p-lg-5 p-4 img">
                     <h3>Contact us</h3>
                     <p className="mb-4">
@@ -98,7 +98,7 @@ const Contact = () => {
                       </div>
                     </div>
                   </div>
-                
+                </div>
         </section>
     )
 }
