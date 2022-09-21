@@ -1,104 +1,133 @@
-import React from 'react';
-import { Link, Routes, Route} from 'react-router-dom'
-import Login from './Login';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function Register(props) {
-    return (
-        <div>
-            <div className="mask d-flex align-items-center h-100 gradient-custom-3">
-                <div className="container h-100">
-                    <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-                            <div className="card" style={{ borderRadius: 15 }}>
-                                <div className="card-body p-5">
-                                    <h2 className="text-uppercase text-center mb-5">
-                                        Create an account
-                                    </h2>
-                                    <form>
-                                        <div className="form-outline mb-4">
-                                            <input
-                                                type="text"
-                                                id="form3Example1cg"
-                                                className="form-control form-control-lg"
-                                            />
-                                            <label className="form-label" htmlFor="form3Example1cg">
-                                                Your Name
-                                            </label>
-                                        </div>
-                                        <div className="form-outline mb-4">
-                                            <input
-                                                type="email"
-                                                id="form3Example3cg"
-                                                className="form-control form-control-lg"
-                                            />
-                                            <label className="form-label" htmlFor="form3Example3cg">
-                                                Your Email
-                                            </label>
-                                        </div>
-                                        <div className="form-outline mb-4">
-                                            <input
-                                                type="password"
-                                                id="form3Example4cg"
-                                                className="form-control form-control-lg"
-                                            />
-                                            <label className="form-label" htmlFor="form3Example4cg">
-                                                Password
-                                            </label>
-                                        </div>
-                                        <div className="form-check d-flex justify-content-center mb-5">
-                                            <input
-                                                className="form-check-input me-2"
-                                                type="checkbox"
-                                                defaultValue=""
-                                                id="form2Example3cg"
-                                            />
-                                            <label className="form-check-label" htmlFor="form2Example3g">
-                                                I agree all statements in{" "}
-                                                <a href="#!" className="text-body">
-                                                    <u>Terms of service</u>
-                                                </a>
-                                            </label>
-                                        </div>
-                                        <div className="d-flex justify-content-center">
-                                            <button
-                                                type="button"
-                                                className="btn btn-info btn-block btn-lg gradient-custom-4 text-body"
-                                            >
-                                                Register
-                                            </button>
-                                        </div>
-                                        <div className="d-flex justify-content-center ">
-                                                <p className="lead fw-normal mb-0 me-3 mt-4">Sign Up with</p>
-                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
-                                                    <i className="fab fa-facebook-f"></i>
-                                                </button>
+export const Register = () => {
 
-                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
-                                                    <i className="fab fa-twitter"></i>
-                                                </button>
+    const [username, setUsername] = useState('');
+    const [usernameErr, setUsernameErr] = useState('');
 
-                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
-                                                    <i className="fab fa-linkedin-in"></i>
-                                                </button>
-                                            </div>
-                                        <p className="text-center text-muted mt-5 mb-0">
-                                            Have already an account?{" "}
-                                            <Link to="/login" className="fw-bold text-body">
-                                                <u>Login here</u>
-                                            </Link>
-                                        </p>
-                                    </form>
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
+
+    const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    
+    const navigate = useNavigate();
+
+    const handleUsernameChange = (e) => {
+        setUsernameErr('');
+        setUsername(e.target.value);
+    }
+
+    const handleEmailChange=(e)=>{
+       
+        setEmailError('');
+        setEmail(e.target.value);
+    }
+
+    const handlePasswordChange=(e)=>{
+        
+        setPasswordError('');
+        setPassword(e.target.value);
+    }
+
+    const handleFormSubmit=(e)=>{
+        e.preventDefault();
+        
+        if(email!==''){
+            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if(emailRegex.test(email)){
+                toast.success('You Have Successfully Registered!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
+
+                    navigate('/login')
+                    
+                localStorage.setItem('email', email)
+                localStorage.setItem('password', password)
+            }
+            else{
+                setEmailError('Invalid Email')
+            }
+        }
+        else{
+            setEmailError('Email is Required');
+        }
+
+        if(password!==''){
+
+        }
+        else{
+            setPasswordError('Password Required');
+        }
+
+        if(username!==''){
+
+        }
+        else{
+            setUsernameErr('Username Required')
+        }
+    }
+
+  return (
+    <div>
+        <form onSubmit={handleFormSubmit} >
+                <section className="vh-100 bg-secondary">
+                    <div className="container py-5 h-100">
+                        <div className="row d-flex justify-content-center align-items-center h-100">
+                            <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+                                <div className="card shadow-2-strong" style={{ borderRadius: 16 }}>
+                                    <div className="card-body p-4 text-center ">
+
+                                        <h3 className="mb-5">SIGN UP</h3>
+
+                                        <div className="form-outline mb-4">
+                                            <input type="username" id="typeUsernameX-2" name="username" className="form-control form-control-lg"
+                                                value={username}
+                                                onChange={handleUsernameChange}
+                                            />
+                                            {usernameErr&&<p style={{ color : "red"}}>{usernameErr}</p>}
+                                            <label className="form-label" for="typeEmailX-2 ">Username</label>
+                                        </div>
+
+
+                                        <div className="form-outline mb-4">
+                                            <input type="email" id="typeEmailX-2" name="email" className="form-control form-control-lg"
+                                                value={email}
+                                                onChange={handleEmailChange}
+                                            />
+                                            {emailError&&<p style={{ color : "red"}}>{emailError}</p>}
+                                            <label className="form-label" for="typeEmailX-2 ">Email</label>
+                                        </div>
+
+                                        <div className="form-outline mb-4">
+                                            <input type="password" id="typePasswordX-2" name="password" className="form-control form-control-lg"
+                                                value={password}
+                                                onChange={handlePasswordChange}
+                                            />
+                                            {passwordError&&<p style={{ color : "red"}}>{passwordError}</p>}
+                                            <label className="form-label" for="typePasswordX-2">Password</label>
+                                        </div>
+
+                                        <button className="btn btn-secondary" type="submit" >SIGN UP</button>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <Routes>
-                <Route path='/Login' element={<Login />} />
-            </Routes>
-        </div>
-    );
+                </section>
+            </form>
+    </div>
+  )
 }
 
 export default Register;

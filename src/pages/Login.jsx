@@ -1,98 +1,114 @@
-import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import Register from '../pages/Register'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function Login(props) {
-    return (
-        <div>
-            <div className="mask d-flex align-items-center h-100 gradient-custom-3 bg=info">
-                <div className="container h-100">
-                    <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-                            <div className="card" style={{ borderRadius: 15 }}>
-                                <div className="card-body p-5">
-                                    <h2 className="text-uppercase text-center mb-5">
-                                        Sign In
-                                    </h2>
-                                    <form>
+export const Login = () => {
+
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
+
+    const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    
+    const navigate = useNavigate();
+
+    const handleEmailChange=(e)=>{
+       
+        setEmailError('');
+        setEmail(e.target.value);
+    }
+
+    const handlePasswordChange=(e)=>{
+        
+        setPasswordError('');
+        setPassword(e.target.value);
+    }
+
+    const handleFormSubmit=(e)=>{
+        e.preventDefault();
+        
+        if(email!==''){
+            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if(emailRegex.test(email)){
+                toast.success('Welcome To Our Market', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
+
+                    navigate('/')
+                    
+                localStorage.setItem('email', email)
+                localStorage.setItem('password', password)
+            }
+            else{
+                setEmailError('Invalid Email')
+            }
+        }
+        else{
+            setEmailError('Email is Required');
+        }
+
+        if(password!==''){
+
+        }
+        else{
+            setPasswordError('Password Required');
+        }
+    }
+
+  return (
+    <div>
+        <form onSubmit={handleFormSubmit} >
+                <section className="vh-100 bg-secondary ">
+                    <div className="container py-5 h-100">
+                        <div className="row d-flex justify-content-center align-items-center h-100">
+                            <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+                                <div className="card shadow-2-strong" style={{ borderRadius: 16 }}>
+                                    <div className="card-body p-4 text-center ">
+
+                                        <h3 className="mb-5">SIGN IN</h3>
+
+
                                         <div className="form-outline mb-4">
-                                            <input
-                                                type="email"
-                                                id="form3Example3cg"
-                                                className="form-control form-control-lg"
+                                            <input type="email" id="typeEmailX-2" name="email" className="form-control form-control-lg"
+                                                value={email}
+                                                onChange={handleEmailChange}
                                             />
-                                            <label className="form-label" htmlFor="form3Example3cg">
-                                                Your Email
-                                            </label>
+                                            {emailError&&<p style={{ color : "red"}}>{emailError}</p>}
+                                            <label className="form-label" for="typeEmailX-2 ">Email</label>
                                         </div>
+
                                         <div className="form-outline mb-4">
-                                            <input
-                                                type="password"
-                                                id="form3Example4cg"
-                                                className="form-control form-control-lg"
-                                                required='Type Something'
+                                            <input type="password" id="typePasswordX-2" name="password" className="form-control form-control-lg"
+                                                value={password}
+                                                onChange={handlePasswordChange}
                                             />
-                                            <label className="form-label" htmlFor="form3Example4cg">
-                                                Password
-                                            </label>
+                                            {passwordError&&<p style={{ color : "red"}}>{passwordError}</p>}
+                                            <label className="form-label" for="typePasswordX-2">Password</label>
                                         </div>
 
-                                        <div className="form-check d-flex justify-content-center mb-5">
-                                            <input
-                                                className="form-check-input me-2"
-                                                type="checkbox"
-                                                defaultValue=""
-                                                id="form2Example3cg"
-                                                required="Type Something"
-                                            />
-                                            <label className="form-check-label" htmlFor="form2Example3g">
-                                                I agree all statements in{" "}
-                                                <a href="#!" className="text-body">
-                                                    <u>Terms of service</u>
-                                                </a>
-                                            </label>
-                                        </div>
-                                        <div className="d-flex justify-content-center">
-                                            <button
-                                                type="button"
-                                                className="btn btn-info btn-block btn-lg gradient-custom-4 text-body" href='/Home'
-                                            >
-                                                Login
-                                            </button>
-                                        </div>
-                                        <div className="d-flex justify-content-center">
-                                                <p className="lead fw-normal mb-0 me-3 mt-4">Sign in with</p>
-                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
-                                                    <i className="fab fa-facebook-f"></i>
-                                                </button>
+                                        <button className="btn btn-primary btn-lg btn-block" type="submit" >LOGIN</button>
 
-                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
-                                                    <i className="fab fa-twitter"></i>
-                                                </button>
+                                        <hr className="my-4" />
 
-                                                <button type="button" className="btn btn-primary btn-floating mx-1 mt-4">
-                                                    <i className="fab fa-linkedin-in"></i>
-                                                </button>
-                                            </div>
-                                        <p className="text-center text-muted mt-5 mb-0">
-                                            Don`t Have Any Account?{" "}
-                                            <Link to="/Register" className="fw-bold text-body">
-                                                <u>Sign Up Here</u>
-                                            </Link>
-                                        </p>
-                                    </form>
+                                        <p style={{ fontSize : 16}}>Don't have an account?</p>
+                                        <p style={{ font : ''}}><Link to="/Register">Register here</Link></p>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <Routes>
-                <Route path='/Register' element={<Register />} />
-            </Routes>
-        </div>
-    );
+                </section>
+            </form>
+    </div>
+  )
 }
 
 export default Login;
