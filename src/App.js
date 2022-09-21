@@ -3,15 +3,15 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
 import Navbar from "./components/Navbar";
-// import Login from './pages/Login';\
-// import Login from './pages/Login';
-import Login from './pages/Login';
-import Cart from './pages/Cart';
-import Contact from './pages/Contact';
+import Login from "./pages/Login";
+import Cart from "./pages/Cart";
+import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import Footer from "./pages/Footer";
+
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from "react-toastify";
+
 
 function App() {
   return (
@@ -29,10 +29,7 @@ function App() {
           draggable
           pauseOnHover
         />
-
-        {/* <Login />  */}
         
-
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -47,9 +44,8 @@ function App() {
         
       </>
       
-
-
       );
+    
 }
 
       export default App;

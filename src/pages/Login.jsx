@@ -10,8 +10,6 @@ export const Login = () => {
 
     const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
-
-    const [passwordRemember, setPasswordRemember] = useState('');
     
     const navigate = useNavigate();
 
@@ -25,11 +23,6 @@ export const Login = () => {
         
         setPasswordError('');
         setPassword(e.target.value);
-    }
-
-    const handlePassworRememberdChange=(e)=>{
-
-        setPasswordRemember(e.target.value);
     }
 
     const handleFormSubmit=(e)=>{
@@ -72,12 +65,12 @@ export const Login = () => {
   return (
     <div>
         <form onSubmit={handleFormSubmit} >
-                <section className="vh-100 bg-success">
+                <section className="vh-100 bg-secondary ">
                     <div className="container py-5 h-100">
                         <div className="row d-flex justify-content-center align-items-center h-100">
                             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                                 <div className="card shadow-2-strong" style={{ borderRadius: 16 }}>
-                                    <div className="card-body p-5 text-center">
+                                    <div className="card-body p-4 text-center ">
 
                                         <h3 className="mb-5">SIGN IN</h3>
 
@@ -100,21 +93,12 @@ export const Login = () => {
                                             <label className="form-label" for="typePasswordX-2">Password</label>
                                         </div>
 
-                                        {/* Checkbox */}
-                                        <div className="form-check d-flex justify-content-start mb-4">
-                                            <input className="form-check-input" type="checkbox" id="form1Example3" 
-                                            value={passwordRemember}
-                                            onChange={handlePassworRememberdChange}
-                                            />
-                                            <label className="form-check-label" for="form1Example3"> Remember password </label>
-                                        </div>
-
                                         <button className="btn btn-primary btn-lg btn-block" type="submit" >LOGIN</button>
 
                                         <hr className="my-4" />
 
-                                        <p>Don't have an account?</p>
-                                        <Link to="/Register">Register here</Link>
+                                        <p style={{ fontSize : 16}}>Don't have an account?</p>
+                                        <p style={{ font : ''}}><Link to="/Register">Register here</Link></p>
 
                                     </div>
                                 </div>
