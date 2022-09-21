@@ -9,7 +9,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
             <div className="container">
                 <Link className="navbar-brand fw-bold fs-4" to="/">
-                    G-FIVE Shop
+                    G-FIVE SHOP
                 </Link>
                 <button 
                     className="navbar-toggler" 

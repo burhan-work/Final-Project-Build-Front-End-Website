@@ -1,7 +1,7 @@
 import { cleanup } from "@testing-library/react";
 import React, { useState, useEffect } from "react";
 import { API_URL } from "../utils/Constant";
-import axios from "axios";
+// import axios from "axios";
 
 const Products = () => {
   const [data, setData] = useState([]);
