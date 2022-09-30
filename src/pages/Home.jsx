@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Product from "./Product";
 
 const Home = () => {
     const navigate = useNavigate('');
@@ -24,7 +23,6 @@ const Home = () => {
                         </div>
                     </div>
             </div>
-            <Product />
         </div>
     )
 }
