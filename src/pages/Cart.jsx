@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Container, Col, Row, Table} from 'react-bootstrap';
+import { Button, Container, Col, Row, Table } from 'react-bootstrap';
 import { useCart } from 'react-use-cart';
-import { BsCartCheck, BsCartX} from 'react-icons/bs';
+import { BsCartCheck, BsCartX } from 'react-icons/bs';
 
 const Cart = () => {
   const {
@@ -13,37 +13,32 @@ const Cart = () => {
     emptyCart,
   } = useCart();
   return (
-    <Container className="py-4 mt-5">
-      <h1 className="my-5 text-center">
-        {isEmpty ? 'Your Cart is Still Empty' : 'The Cart'}
+    <Container className="py-2 mt-3">
+      <h1 className="my-3 text-center">
+        {isEmpty ? 'Your Cart is Still Empty' : 'Shopping Cart'}
       </h1>
       <Row className="justify-content-center">
-        <Table responsive="sm" className="mb-5">
+        <Table responsive="sm-12" className="mb-5">
           <tbody>
             {items.map((item, index) => {
               return (
                 <tr key={index}>
-                  <td>
-                    <div style={{
-                      background: 'white', height: '8rem', overflow: 'hidden', display: 'flex',
-                      justifyContent: 'center', alignItems: 'center'
-                    }}>
-                      <div style={{ padding: '.5rem' }}>
-                        <img src={item.image} style={{ width: '4rem' }} alt={item.title} />
-                      </div>
+                  <td className='text-center'>
+                    <div style={{ padding: '.5rem' }}>
+                      <img src={item.image} style={{ width: '4rem' }} alt={item.title} />
                     </div>
                   </td>
-                  <td>
-                    <h6 style={{ whiteSpace: 'nowrap', width: '14rem', overflow: 'hidden', textOverFlow: 'ellipsis' }}>
+                  <td className='text-center'>
+                    <h6 style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverFlow: 'ellipsis' }}>
                       {item.title}
                     </h6>
+                    <p>Rp {item.price}</p>
+
                   </td>
-                  <td>Rp {item.price}</td>
-                  <td>Quantity ({item.quantity})</td>
-                  <td>
-                    <Button onClick={() => updateItemQuantity(item.id, item.quantity - 1)} className="ms-2">-</Button>
-                    <Button onClick={() => updateItemQuantity(item.id, item.quantity + 1)} className="ms-2">+</Button>
-                    <Button variant="danger" onClick={() => removeItem(item.id)} className="ms-2">Remove Item</Button>
+                  <td className='text-center'><p>Quantity ({item.quantity})</p>
+                    <Button variant="secondary" onClick={() => updateItemQuantity(item.id, item.quantity - 1)} className="ms-2">-</Button>
+                    <Button variant="secondary" onClick={() => updateItemQuantity(item.id, item.quantity + 1)} className="ms-2">+</Button>
+                    <Button variant="danger" onClick={() => removeItem(item.id)} className="ms-2">Delete</Button>
                   </td>
                 </tr>
               )
@@ -59,18 +54,13 @@ const Cart = () => {
               <h4>Total Price: Rp {cartTotal}</h4>
             </Col>
             <Col className="p-0" md={4}>
-              <Button variant="danger"
-                className="m-2"
-                onClick={() => emptyCart()}
-              >
-                <BsCartX size="1.7rem" />
-                Clear Cart
-              </Button>
-              <Button variant="success"
-                className="m-2"
-              >
+              <Button variant="success" className="m-2">
                 <BsCartCheck size="1.7rem" />
-                Clear Cart
+                Checkout
+              </Button>
+              <Button variant="danger" className="m-2" onClick={() => emptyCart()}>
+                <BsCartX size="1.7rem" />
+                Delete All
               </Button>
             </Col>
           </Row>}
