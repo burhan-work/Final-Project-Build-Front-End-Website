@@ -1,74 +1,121 @@
-section#contact{
-    width:830px;
-    height:650px;
-    margin:0 auto;
-    font-family:'Segoe UI',sans-serif    
-    }
-   
-    /* Atur Posisi, Ukuran, Serta Tampilan Pada Form */
-    div#contact-form{
-    background-color: silver;
-    text-align:center;
-    border:1px solid rgb(177, 132, 10);
-    width: 850px;
-    padding:0 50px 15px;
-    margin-top:50px;
-    margin-bottom: 0ch;
-    box-shadow:0 0 15px;
-    border-radius:6px;
-    float: center
-    }
-    /* Atur Heading */
-     h1{
-    text-align:center;
-    margin-top:40px
-    }
-    /* Atur Heading Line */
-    /* h2{ */
-    /* margin-top:-5px */
-    
-    /* Atur Label */
-    label{
-    float:left;
-    font-size:16px
-    }
-    /* Atur Kolom Input Untuk Subyek Text */
-    input[type="text"]{
-    width:100%;
-    margin-top:10px;
-    height:35px;
-    margin-bottom:25px;
-    padding:10px;
-    border:3px solid #e7ebed
-    }
+section#contact {
+    width: 830px;
+    padding: 7em 0;
+    height: 650px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif
+}
 
-    input[type="email"]{
-        width:100%;
-        margin-top:10px;
-        height:35px;
-        margin-bottom:25px;
-        padding:10px;
-        border:3px solid #e7ebed
-        }
-    /* Atur Kolom Textarea */
-    textarea{
-    width:100%;
-    border:3px solid #e7ebed;
-    padding:10px;
-    margin-bottom:25px;
-    margin-top:10px;
-    height:100px;
-    resize:none
-    }
-    /* Atur Kolom Submit */
-    button[type="submit"]{
-    width:100%;
-    padding:10px 45px;
-    background-color:#151616;
-    border:none;
-    color:rgb(241, 237, 237);
-    font-size:18px;
-    font-weight:700;
-    cursor:pointer;
-    font-family:'Segoe UI',sans-serif
-    }
+/* Atur Posisi, Ukuran, Serta Tampilan Pada Form */
+div#contact-form {
+    background-color: antiquewhite;
+    text-align: center;
+    border: 1px solid rgb(177, 132, 10);
+    width: 650px;
+    padding: 0 50px 15px;
+    margin-top: 50px;
+    margin-bottom: 0ch;
+    box-shadow: 0 0 15px;
+    border-radius: 6px;
+    float: center
+}
+
+/* Atur Heading */
+h2 {
+    margin-top: 40px
+}
+
+/* Atur Heading Line */
+h2 {
+    margin-top: -5px
+}
+
+/* Atur Label */
+label {
+    float: left;
+    font-size: 16px
+}
+
+/* Atur Kolom Input Untuk Subyek Text */
+input[type="text"] {
+    width: 100%;
+    margin-top: 10px;
+    height: 35px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border: 3px solid #242627
+}
+
+input[type="email"] {
+    width: 100%;
+    margin-top: 10px;
+    height: 35px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border: 3px solid #242627
+}
+
+/* Atur Kolom Textarea */
+textarea {
+    width: 100%;
+    border: 3px solid #242627;
+    padding: 10px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    height: 100px;
+    resize: none
+}
+
+
+/* Atur Kolom Submit */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px 45px;
+    background-color: #242627;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif
+} */
+
+  .reset {
+    width: 100%;
+    padding: 10px 45px;
+    background-color: #242627;
+    float: right;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif
+  }
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.text {
+    width: calc(100% - 50px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #000;
+}
+

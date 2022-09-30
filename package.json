@@ -14,8 +14,15 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-filter-search": "^1.1.11",
+=======
+
+    "react-loading-skeleton": "^3.1.0",
+
+>>>>>>> 27a0baa81b1ee29cd0fd43e87445d8e381e3a5c9
     "react-icons": "^4.4.0",
+
     "react-redux": "^8.0.2",
     "react-regex": "^1.0.0",
     "react-router": "^6.4.0",
