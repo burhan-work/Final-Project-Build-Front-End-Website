@@ -8,7 +8,6 @@ import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import Footer from "./pages/Footer";
-
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from "react-toastify";
 
