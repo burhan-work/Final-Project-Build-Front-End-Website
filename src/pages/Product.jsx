@@ -21,6 +21,9 @@ const Product = () => {
     return (
         <Container className="py-4">
             <Row className="justify-content-center">
+                <div className=' product d-flex justify-content-center mt-4 mb-4'>
+                    <h1>Latest Product</h1>
+                </div>
                 <Col xs={10} md={7} lg={6} xl={4} className="mb-3 mx-auto text-center">
                     <InputGroup className="mb-3">
                         <InputGroup.Text className="bg-secondary text-dark">
