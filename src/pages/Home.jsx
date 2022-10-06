@@ -24,6 +24,11 @@ const Home = () => {
                         </div>
                     </div>
             </div>
+            <div className="d-flex justify-content-center">
+                <h1 className="display-3 fw-bold mb-5 mt-5" style={{color: "black"}}>New Products</h1>
+                
+            </div>
+            
             <Product />
         </div>
     )
