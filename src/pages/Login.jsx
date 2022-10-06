@@ -42,9 +42,10 @@ export const Login = () => {
                     });
 
                     navigate('/')
-                    
+
                 localStorage.setItem('email', email)
                 localStorage.setItem('password', password)
+
             }
             else{
                 setEmailError('Invalid Email')
@@ -55,7 +56,7 @@ export const Login = () => {
         }
 
         if(password!==''){
-
+            
         }
         else{
             setPasswordError('Password Required');
